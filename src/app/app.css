@@ -1,0 +1,42 @@
+main{
+    padding: 0;
+    background: linear-gradient(135deg,
+        var(--primary-color) 0%, 
+        var(--secondary-color) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-wpraper{
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: white;
+
+    box-shadow: 5px 5px 15px 10px black;
+
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar{
+    margin: 10px;
+}
+input{
+    padding: 10px 15px;
+
+    background: rgba(255, 255, 255, 0.692);
+    backdrop-filter: blur(20px);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: white;
+
+    font-size: 32px;
+}
