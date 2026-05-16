@@ -188,22 +188,16 @@
   <div class="main-wpraper">
       <div class="weather-card">
         <div class="search-bar">
-          <input type="text" placeholder="Find your city...">
+          <input type="text" placeholder="Find your city..."
+                 [(ngModel)]="searchText" 
+                 (keyup.enter)="searchWeather()">
         </div>
         <div class="weather-details">
-            <app-weather-details></app-weather-details>
+            <app-weather-details [weatherDetails] = "fetchedWeather"></app-weather-details>
         </div>
       </div>
   </div>
 </main>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
 <router-outlet />

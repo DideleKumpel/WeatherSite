@@ -7,21 +7,21 @@ import { WeatherInterface } from '../weather-interface';
   template: `
     <div>
       <div class="weather-main-info">
-        <h1> {{ weatherDetails.temperature }}° </h1>
-        <h2> {{ weatherDetails.city }}  , {{ weatherDetails.country }}</h2>
-        <h3> Weather description </h3>
+        <h1> {{ weatherDetails?.temperature }}° </h1>
+        <h2> {{ weatherDetails?.city }}  , {{ weatherDetails?.country }}</h2>
+        <h3> {{ weatherDetails?.condition }} </h3>
       </div>
       <div class="weather-details">
         <div>
-          <h2>{{ weatherDetails.humanidity}}%</h2>
-          <h3>Humanidity</h3>
+          <h2>{{ weatherDetails?.humidity}}%</h2>
+          <h3>Humidity</h3>
         </div>
         <div>
-          <h2>{{ weatherDetails.wind }} km/h</h2>
+          <h2>{{ weatherDetails?.wind }} km/h</h2>
           <h3>Wind</h3>
         </div>
         <div>
-          <h2>{{ weatherDetails.pressure }} hPa</h2>
+          <h2>{{ weatherDetails?.pressure }} hPa</h2>
           <h3>Presure</h3>
         </div>
       </div>
@@ -30,19 +30,8 @@ import { WeatherInterface } from '../weather-interface';
   styleUrl: './weather-details.css',
 })
 export class WeatherDetails {
-  @Input() weatherDetails!: WeatherInterface;
+  @Input() weatherDetails!: WeatherInterface | undefined;
 
   constructor(){
-     const weatherMocup: WeatherInterface = {
-      city: "New York",
-      country: "USA",
-      temperature: 32,
-      humanidity: 62,
-      wind: 32,
-      pressure: 10045,
-      cloud: 24,
-      condition: "sunny"
-     }
-     this.weatherDetails = weatherMocup;
     }
 }
