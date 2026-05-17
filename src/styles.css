@@ -3,10 +3,28 @@
   margin: 0;
   padding: 0;
 }
+
 :root {
   --primary-color: #9744c7;
   --secondary-color: #3633be;
   --accent-color: #e8e7fa;
   --shadow-color: #E8E8E8;
   --text-color: #FFFFFF;
+}
+
+div {
+    color: var(--text-color);
+}
+
+h1{
+    font-size: 92px;
+    color: var(--text-color);
+}
+
+h2{
+    font-size: 32px;
+}
+
+h3{
+    font-size: 24px;
 }

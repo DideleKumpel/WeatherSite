@@ -8,22 +8,6 @@ main{
     align-items: center;
 }
 
-div {
-    color: var(--text-color);
-}
-
-h1{
-    font-size: 92px;
-    color: var(--text-color);
-}
-
-h2{
-    font-size: 32px;
-}
-
-h3{
-    font-size: 24px;
-}
 
 
 .main-wpraper{
@@ -48,6 +32,8 @@ h3{
 
 input{
     padding: 10px 15px;
+    
+    width: 92%;
 
     background: rgba(255, 255, 255, 0.692);
     backdrop-filter: blur(20px);
@@ -60,10 +46,32 @@ input{
     font-size: 32px;
 }
 
+.suggestions-list{
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.692);
+
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 30px;
+    border-color: white;
+}
+
+.suggestions-list li{
+    list-style-type: none;
+    margin: 10px;
+
+    color: black;
+    font-size: 24px;
+
+    border-bottom: 1px black solid;
+
+}
+
 .loading-panel{
     margin: 20px;
     padding: 10px;
 
+    color: var(--text-color);
     display: flex;
     align-content: center;
     justify-content: center;
