@@ -190,11 +190,31 @@
         <div class="search-bar">
           <input type="text" placeholder="Find your city..."
                  [(ngModel)]="searchText" 
+                 (ngModelChange)="onInputChange()"
                  (keyup.enter)="searchWeather()">
+          
+          @if (suggestions().length > 0) {
+          <ul class="suggestions-list">
+            @for (item of suggestions(); track item.id) {
+              <li (click)="selectSuggestion(item.city)">
+                <strong>{{ item.city }}</strong>, {{ item.country }}
+              </li>
+          }
+        </ul>
+          }
         </div>
-        <div class="weather-details">
-            <app-weather-details [weatherDetails] = "fetchedWeather"></app-weather-details>
-        </div>
+
+        @if (isLoading){
+          <div class="loading-panel">
+            <h1>Loading...</h1>
+          </div>
+        }
+
+        @if (fetchedWeather){
+          <div class="weather-details">
+              <app-weather-details [weatherDetails] = "fetchedWeather"></app-weather-details>
+          </div>
+        }
       </div>
   </div>
 </main>
